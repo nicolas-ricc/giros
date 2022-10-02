@@ -24,6 +24,7 @@ export async function getStaticProps({ params }) {
         props: {
             articlesByAuthor,
         },
+        revalidate: 60
     };
 }
 

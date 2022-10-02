@@ -1,0 +1,2 @@
+# giros
+Giros literary magazine

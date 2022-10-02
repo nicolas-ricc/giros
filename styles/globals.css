@@ -1,16 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Average&700&family=Lato&family=Kumbh+Sans&family=Jost');
+.root,
+#root,
+#docs-root {
+  --primary: #ff0dbf;
+}
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-size: cover;
+  @apply bg-giros-dark-bg
 }
 
 a {
-  color: inherit;
+  color: #ffdcbc;
   text-decoration: none;
 }
 
 * {
   box-sizing: border-box;
 }
+
+

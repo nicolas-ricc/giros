@@ -1,0 +1,25 @@
+.eclipse:before {
+  display: block;
+  content: '';
+  height: 4rem;
+  width: 4rem;
+  -webkit-animation: eclipse 1s infinite ease;
+          animation: eclipse 1s infinite ease;
+  background-color: transparent;
+  border-radius: 100%; }
+
+@-webkit-keyframes eclipse {
+  from {
+    -webkit-box-shadow: inset 50px 0 0 0 #ff0dbf;
+            box-shadow: inset 50px 0 0 0 #ff0dbf; }
+  to {
+    -webkit-box-shadow: inset -50px 0 0 0 #ff0dbf;
+            box-shadow: inset -50px 0 0 0 #ff0dbf; } }
+
+@keyframes eclipse {
+  from {
+    -webkit-box-shadow: inset 50px 0 0 0 #ff0dbf;
+            box-shadow: inset 50px 0 0 0 #ff0dbf; }
+  to {
+    -webkit-box-shadow: inset -50px 0 0 0 #ff0dbf;
+            box-shadow: inset -50px 0 0 0 #ff0dbf; } }

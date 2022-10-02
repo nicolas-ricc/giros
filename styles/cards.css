@@ -1,0 +1,23 @@
+.card-title {
+    @apply text-highlight font-['Montserrat'] font-bold
+  }
+  
+  .card-text {
+    @apply text-reading font-['Lato'] text-lg
+  }
+  
+  .shadow-feed {
+    @apply transition-shadow duration-300 hover:shadow-md hover:shadow-highlight
+  }
+  
+  .link:hover .link-highlight {
+    @apply text-primary
+  }
+  
+  .link:hover .link-highlight-green {
+    @apply text-highlight
+  }
+
+  .card-container {
+    @apply py-6 md:py-2 lg:py-2
+  }

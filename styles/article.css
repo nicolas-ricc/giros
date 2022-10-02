@@ -1,0 +1,37 @@
+.article-title {
+    margin: 1rem;
+    line-height: 1.15;
+    @apply text-primary lg:text-6xl font-['Montserrat'] font-bold
+}
+
+.article-header {
+    background: linear-gradient(0.75turn, #ffeecb, #FFEECB66)
+}
+
+.article-description {
+    line-height: 1.5;
+    font-size: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    @apply text-highlight font-bold
+}
+
+.article-body {
+    line-height: 1.5;
+    font-size: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    @apply text-reading
+}
+
+.article-body > p {
+    @apply py-2 font-['Lato'] text-xl indent-4
+}
+
+.article-body::first-letter {
+    font-size: 1.5rem
+}
+
+.article-quote {
+    @apply font-bold italic p-[1rem] text-center text-lg
+}

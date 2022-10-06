@@ -18,20 +18,20 @@ export default function AuthorList({ authors }: { authors: any }) {
                     Texto de presentación de los autores
                 </p>
             </div>
-            <div className={`grid sm:grid-cols-2 md:grid-cols-2 grid-rows-auto lg:grid-cols-${authors.withPicture.length <= 4 ? authors.withPicture.length : 4} grid-row-auto justify-evenly mx-auto lg:max-w-screen-lg`}>
+            <div className={`grid grid-cols-2 md:grid-cols-2 grid-rows-auto lg:grid-cols-${authors.withPicture.length <= 4 ? authors.withPicture.length : 4} justify-evenly mx-auto lg:max-w-screen-lg`}>
                 {authors.withPicture.map((author: author, idx: number) => (
                     <Link key={idx} href={`/authors/${author._id}`}>
-                        <a className="flex flex-col items-center justify-between px-2 link">
+                        <a className="flex flex-col items-center justify-around p-2 link">
                             <div>
                                 {author.avatar && <Image
-                                    className="object-cover w-20 h-20 mb-2 rounded-full"
+                                    className="object-cover w-10 h-10 lg:w-20 lg:h-20 mb-2 rounded-full"
                                     width={80}
                                     height={80}
                                     src={urlFor(author.avatar)?.url()}
                                     alt="Person"
                                 />}
                             </div>
-                            <div className="flex flex-col items-center">
+                            <div className="flex flex-col items-center text-center">
                                 <p className="text-lg font-bold card-text link-highlight">{author.name}</p>
                             </div>
                         </a>

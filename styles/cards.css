@@ -19,5 +19,5 @@
   }
 
   .card-container {
-    @apply py-6 md:py-2 lg:py-2
+    @apply py-6 md:py-2 lg:py-2 
   }

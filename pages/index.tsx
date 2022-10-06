@@ -14,8 +14,8 @@ export async function getStaticProps() {
     revalidate: 60
   }
 }
-export default function Home(props) {
-  const staticData = props.dehydratedState?.queries?.find(query => query.queryKey === 'articles-query').state?.data
+export default function Home({dehydratedState}) {
+  const staticData = dehydratedState?.queries?.find(query => query.queryKey === 'articles-query')?.state?.data
   return <DataLoader<articlesAndArt> id='articles-query' load={getArticlesAndArt} options={{ initialData: staticData }} render={(data) => {
     return <Feed content={data} />
   }} />

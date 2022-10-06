@@ -18,19 +18,16 @@ export default function VisualArtCard({ artwork }: visualArt) {
     return (
         <CardContainer>
             <div className={` flex flex-col justify-start overflow-hidden duration-300 ${isHovered && "p-1"} `} onMouseOver={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-                <div className="min-h-1/6 flex flex-col justify-center items-center w-full">
-                    <Link href={artworkUrl} >
-                        <a className="link mx-5 mb-2 text-center" onMouseOver={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+                <Link href={artworkUrl}>
+                    <a className="h-full relative bg-cover w-full">
+                        <div className="min-h-1/6 flex flex-col justify-center items-center w-full">
+
                             <h5
                                 className={`font-bold inline-block mb-3 lg:text-lg leading-5 ${isHovered ? "text-highlight font-['Montserrat'] text-primary" : "card-title"}`}
                             >
                                 {artwork.title}
                             </h5>
-                        </a>
-                    </Link>
-                </div>
-                <Link href={artworkUrl}>
-                    <a className="h-full py-2 relative bg-cover w-full">
+                        </div>
                         <Image
                             className="w-full rounded bg-cover"
                             src={urlFor(artwork.image).url()}
@@ -41,12 +38,10 @@ export default function VisualArtCard({ artwork }: visualArt) {
                         />
                     </a>
                 </Link>
-                <div className="min-h-1/4 p-3">
-                    <div className="text-xs font-semibold tracking-wide uppercase lg:flex lg:flex-row lg:justify-between sm:grid sm:grid-rows-2">
-                        <div className="text-xs font-semibold tracking-wide uppercase flex flex-row gap-2 justify-start">
-                            <CathegoryReference cathegory={artwork.cathegory} />
-                            <span className="text-giros-reading-gray">{dateDisplaySelection.dayAndMonth(artwork.publishDate)}</span>
-                        </div>
+                <div className="text-xs font-semibold tracking-wide uppercase flex flex-col items-center py-2">
+                    <CathegoryReference cathegory={"Artes visuales"} />
+                    <span className="text-giros-reading-gray">{dateDisplaySelection.dayAndMonth(artwork.publishDate)}</span>
+                    <div className="py-2">
                         <AuthorReference author={artwork.author} />
                     </div>
                 </div>

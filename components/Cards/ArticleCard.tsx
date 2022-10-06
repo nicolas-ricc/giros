@@ -31,7 +31,7 @@ export const ArticleCard = ({ article }) => {
                     </Link>
                 }
 
-                <div className="lg:px-5 pt-5 overflow-y-hidden">
+                <div className="px-2 md:px-2 lg:px-5 pt-5 overflow-y-hidden">
                     <div className="h-full flex flex-col justify-between items-left mb-1 pb-2">
                         <div className="mb-3 text-xs font-semibold tracking-wide uppercase flex flex-row gap-2 align-baseline justify-between">
                             <CathegoryReference cathegory={article.cathegory} />

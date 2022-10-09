@@ -17,7 +17,7 @@ export default function ArticleSectionListItem({ indexInfoComponent, article }: 
         <div className="my-5 px-10 border-t divide-y">
             <div className="grid py-4 grid-cols-6 gap-4 justify-start">
                 <div className='col-span-2'>
-                    <div className="space-y-1 text-xs font-semibold tracking-wide uppercase">
+                    <div className="space-y-1 text-xs font-semibold  uppercase">
                         <>{indexInfoComponent}</>
                         <p className="text-giros-reading-gray">{dateDisplaySelection.dayAndMonth(new Date(article.publishDate))}</p>
                     </div>

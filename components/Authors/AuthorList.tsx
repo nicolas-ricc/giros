@@ -11,7 +11,7 @@ export default function AuthorList({ authors }: { authors: any }) {
     return (
         <div className="flex flex-col my-10">
             <div className="mx-auto mb-10 sm:text-center">
-                <p className="text-lg card-title inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
+                <p className="text-lg card-title inline-block px-3 py-px mb-4 text-xs font-semibold r text-teal-900 uppercase rounded-full bg-teal-accent-400">
                     Nosotros
                 </p>
                 <p className="card-text text-base text-gray-700 md:text-lg">

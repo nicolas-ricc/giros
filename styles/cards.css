@@ -1,5 +1,5 @@
 .card-title {
-    @apply text-highlight font-['Montserrat'] font-bold
+    @apply text-highlight font-['Montserrat'] font-bold 
   }
   
   .card-text {

@@ -8,44 +8,37 @@ import { visualArt } from "../types";
 import { dateDisplaySelection } from "../utils/dateFormatter";
 import CardContainer from "./CardContainer";
 
-export default function VisualArtCard({ artwork }: visualArt) {
+export default function VisualArtCard({ artwork, withCathegoryReference }: {artwork: visualArt, withCathegoryReference?: boolean}) {
     const [isHovered, setIsHovered] = useState<boolean>(false)
     console.log("art", artwork)
 
     const artworkUrl = `/artworks/${artwork._id}`
 
-
     return (
         <CardContainer>
-            <div className={` flex flex-col justify-start overflow-hidden duration-300 ${isHovered && "p-1"} `} onMouseOver={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-                <Link href={artworkUrl}>
-                    <a className="h-full relative bg-cover w-full">
-                        <div className="min-h-1/6 flex flex-col justify-center items-center w-full">
-
-                            <h5
-                                className={`font-bold inline-block mb-3 lg:text-lg leading-5 ${isHovered ? "text-highlight font-['Montserrat'] text-primary" : "card-title"}`}
-                            >
-                                {artwork.title}
-                            </h5>
+            <Link href={artworkUrl}>
+                <a className="h-full relative bg-cover w-full">
+                    <div className={` flex flex-col justify-start overflow-hidden duration-300 ${isHovered && "p-1"} `} onMouseOver={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+                        <div className="relative overflow-hidden rounded">
+                            <Image
+                                width={100}
+                                height={100}
+                                layout="responsive"
+                                className="object-cover w-full h-56 md:h-64 xl:h-80"
+                                src={urlFor(artwork.image).url()}
+                                alt=""
+                            />
+                            <div className={`${isHovered ? 'absolute' : 'hidden'} inset-x-0 bottom-0 px-6 py-4 bg-black bg-opacity-75`}>
+                                <h5 className="mb-2 text-xl font-bold leading-none sm:text-2xl text-primary">
+                                    {artwork.title}
+                                </h5>
+                                {withCathegoryReference && <CathegoryReference cathegory={"Artes visuales"}/>}
+                                <AuthorReference author={artwork.author} />
+                            </div>
                         </div>
-                        <Image
-                            className="w-full rounded bg-cover"
-                            src={urlFor(artwork.image).url()}
-                            alt={artwork.alt}
-                            layout="responsive"
-                            width={362}
-                            height={256}
-                        />
-                    </a>
-                </Link>
-                <div className="text-xs font-semibold tracking-wide uppercase flex flex-col items-center py-2">
-                    <CathegoryReference cathegory={"Artes visuales"} />
-                    <span className="text-giros-reading-gray">{dateDisplaySelection.dayAndMonth(artwork.publishDate)}</span>
-                    <div className="py-2">
-                        <AuthorReference author={artwork.author} />
                     </div>
-                </div>
-            </div>
+                </a>
+            </Link>
         </CardContainer>
     )
 }

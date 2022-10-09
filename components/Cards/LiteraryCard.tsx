@@ -15,7 +15,7 @@ export default function LiteraryCard({ article }) {
         <CardContainer>
             <div className="w-full h-full bg-[rgba(255,255,255,0.05)] rounded p-0">
                 <div className="bg-giros-card-grey rounded p-5 shadow-feed">
-                    <div className=" w-full mb-3 text-xs font-semibold tracking-wide uppercase flex flex-row gap-2 align-baseline justify-between">
+                    <div className=" w-full mb-3 text-xs font-semibold  uppercase flex flex-row gap-2 align-baseline justify-between">
                         <CathegoryReference cathegory={article.cathegory} />
                         <span className="text-giros-reading-gray">{dateDisplaySelection.dayAndMonth(article.publishDate)}</span>
                     </div>
@@ -30,7 +30,7 @@ export default function LiteraryCard({ article }) {
                                 >
                                     <div className="mb-3 inline-block card-title">
 
-                                        <p className="font-sans text-xl font-extrabold leading-none tracking-tight lg:text-2xl link-highlight">
+                                        <p className="font-sans text-xl font-extrabold leading-none lg:text-2xl link-highlight">
                                             {article.title}
                                         </p>
                                     </div>

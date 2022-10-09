@@ -6,12 +6,14 @@ import AuthorReference from '../Authors/AuthorReference';
 import CathegoryReference from '../Cathegories/CathegoryReference';
 import { dateDisplaySelection } from '../utils/dateFormatter'
 import CardContainer from './CardContainer';
+import CardDate from './Components/CardDate';
 import CardDescription from './Components/CardDescription';
 
 export const ArticleCard = ({ article }) => {
     const [isHovered, setIsHovered] = useState<boolean>(false)
 
     const articleUrl = `/articles/${article._id}`
+    console.log("date article", article?.publishDate)
 
     return (
         <CardContainer>
@@ -33,9 +35,9 @@ export const ArticleCard = ({ article }) => {
 
                 <div className="px-2 md:px-2 lg:px-5 pt-5 overflow-y-hidden">
                     <div className="h-full flex flex-col justify-between items-left mb-1 pb-2">
-                        <div className="mb-3 text-xs font-semibold tracking-wide uppercase flex flex-row gap-2 align-baseline justify-between">
+                        <div className="mb-3 flex flex-row gap-2 align-baseline justify-between">
                             <CathegoryReference cathegory={article.cathegory} />
-                            <span className="text-giros-reading-gray">{dateDisplaySelection.dayAndMonth(article.publishDate)}</span>
+                            <CardDate date={article.publishDate}/>
                         </div>
                         <Link href={articleUrl}>
                             <a className="link">

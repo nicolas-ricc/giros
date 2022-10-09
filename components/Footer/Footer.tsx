@@ -35,7 +35,7 @@ export const Footer = ({ contactInfo }: FooterProps) => {
                         </div>
                     </div>
                     <div className="space-y-2 text-sm">
-                        <p className="text-base font-bold tracking-wide">
+                        <p className="text-base font-bold ">
                             Contacto
                         </p>
                         <div className="flex flex-col">
@@ -60,7 +60,7 @@ export const Footer = ({ contactInfo }: FooterProps) => {
                         </div>
                     </div>
                     <div>
-                        <span className="text-base font-bold tracking-wide ">
+                        <span className="text-base font-bold  ">
                             Redes
                         </span>
                         <div className="flex items-center mt-1 space-x-3">

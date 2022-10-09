@@ -15,7 +15,7 @@ export default function MixedFeedLayout({ articles, visualArt, reversed = false 
     </div>
 
     const artworkAndLiterary = <div className="flex flex-col justify-start gap-2">
-        {Array.isArray(visualArt) && visualArt.length > 0 && <VisualArtCard artwork={visualArt[0]} />}
+        {Array.isArray(visualArt) && visualArt.length > 0 && <VisualArtCard artwork={visualArt[0]} withCathegoryReference/>}
         <div className="flex flex-col justify-evenly gap-2">
             {articles[4] && (<> <LiteraryCard article={articles[4]} />
                 <LiteraryCard article={articles[5]} /></>)}

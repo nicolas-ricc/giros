@@ -14,7 +14,7 @@ export const Nav = () => {
                 <a
                     aria-label="Our product"
                     title="Our product"
-                    className="text-primary font-bold tracking-wide link-highlight-green"
+                    className="text-primary font-bold  link-highlight-green"
                 >
                     {cat.title.toUpperCase()}
                 </a>
@@ -33,7 +33,7 @@ export const Nav = () => {
                     title="Company"
                     className="inline-flex items-center"
                 >
-                    <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
+                    <span className="ml-2 text-xl font-bold  text-gray-800 uppercase">
                         <Image
                             src={girosLogo}
                             alt={"giros logo"}

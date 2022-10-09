@@ -27,6 +27,10 @@ module.exports = {
     boxShadow: {
       'DEFAULT': '0 0px 3px 0, 0 0px 2px -1px',
       'md': '0 0px 6px -1px, 0 0px 4px -2px'
+    },
+    letterSpacing: {
+      normal: '.025em',
+      wide: '.05em',
     }
   },
   plugins: [],

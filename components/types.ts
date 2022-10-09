@@ -10,7 +10,7 @@ export type article = {
 
 
 export type author = {
-    avatar: Record<string,any>
+    avatar: Record<string, any>
     role: string
     instagram: string
     name: string
@@ -18,7 +18,12 @@ export type author = {
     _id: string
 } & Record<string, any>
 
-export type visualArt = Record<string, any>
+export type visualArt = {
+    title: string,
+    image: Record<string, any>,
+    publishDate: Date
+} & Record<string, any>
+
 export type articlesAndArt = {
     articles: article[],
     art: visualArt[]

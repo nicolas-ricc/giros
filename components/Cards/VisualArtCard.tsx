@@ -10,7 +10,7 @@ import CardContainer from "./CardContainer";
 
 export default function VisualArtCard({ artwork, withCathegoryReference }: {artwork: visualArt, withCathegoryReference?: boolean}) {
     const [isHovered, setIsHovered] = useState<boolean>(false)
-    console.log("art", artwork)
+    
 
     const artworkUrl = `/artworks/${artwork._id}`
 

@@ -7,10 +7,10 @@ import { author } from '../types';
 export default function AuthorList({ authors }: { authors: any }) {
 
 
-    console.log("authors", authors)
+    
     return (
         <div className="flex flex-col my-10">
-            <div className="mx-auto mb-10 sm:text-center">
+            <div className="mx-auto mb-10 flex flex-col items-center text-center">
                 <p className="text-lg card-title inline-block px-3 py-px mb-4 text-xs font-semibold r text-teal-900 uppercase rounded-full bg-teal-accent-400">
                     Nosotros
                 </p>
@@ -18,8 +18,8 @@ export default function AuthorList({ authors }: { authors: any }) {
                     Texto de presentación de los autores
                 </p>
             </div>
-            <div className={`grid grid-cols-2 md:grid-cols-2 grid-rows-auto lg:grid-cols-${authors.withPicture.length <= 4 ? authors.withPicture.length : 4} justify-evenly mx-auto lg:max-w-screen-lg`}>
-                {authors.withPicture.map((author: author, idx: number) => (
+            <div className={`grid grid-cols-2 md:grid-cols-2 grid-rows-auto lg:grid-cols-${authors.length <= 4 ? authors.length : 4} justify-evenly mx-auto lg:max-w-screen-lg`}>
+                {authors.map((author: author, idx: number) => (
                     <Link key={idx} href={`/authors/${author._id}`}>
                         <a className="flex flex-col items-center justify-around p-2 link">
                             <div>

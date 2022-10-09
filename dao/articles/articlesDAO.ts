@@ -20,7 +20,7 @@ export const getArticlesByCathegory = async(cathegory: string): Promise<article[
 export interface articlesByAuthor {author: author, articles: article[]}
 
 export const getArticlesByAuthor  = async(authorId: string): Promise<articlesByAuthor> => {
-    console.log(authorId)
+    
     const articlesByAuthorQuery = `*[_type match "article" && author._ref match \"${authorId}\" && !(_id in path("drafts.**"))] | order(publishDate desc)`
     const authorDetails = `*[_type match "author" && _id match \"${authorId}\"] | order(publishDate desc)`
     const _articles = await cmsClient.fetch(articlesByAuthorQuery)

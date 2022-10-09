@@ -13,7 +13,7 @@ export const ArticleCard = ({ article }) => {
     const [isHovered, setIsHovered] = useState<boolean>(false)
 
     const articleUrl = `/articles/${article._id}`
-    console.log("date article", article?.publishDate)
+    
 
     return (
         <CardContainer>

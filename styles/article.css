@@ -35,3 +35,7 @@
 .article-quote {
     @apply font-bold italic p-[1rem] text-center text-lg
 }
+
+.article-strong {
+    @apply text-highlight font-bold 
+  }

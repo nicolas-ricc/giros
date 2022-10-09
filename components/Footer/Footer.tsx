@@ -12,7 +12,7 @@ interface FooterProps {
 
 export const Footer = ({ contactInfo }: FooterProps) => {
 
-    console.log("contactInfo", contactInfo)
+    
     return (
         <DataLoader id='static-configs' load={getContactsAndSocials} options={{ initialData: contactInfo }} render={(data) => (
             <div className="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl text-reading">
@@ -69,7 +69,7 @@ export const Footer = ({ contactInfo }: FooterProps) => {
                                 contactInfo.social_networks.social_drop.map((socialType, idx) => {
                                     const value = contactInfo.social_networks[socialType]
                                     const social = socialsTypeRedirectMap(socialType, value)
-                                    console.log("social", social)
+                                    
                                     return (
                                         <Link href={social.href} key={idx}>
                                             <a>

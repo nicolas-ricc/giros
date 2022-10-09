@@ -4,7 +4,7 @@ import VisualArtCard from "../Cards/VisualArtCard";
 import { article, visualArt } from "../types";
 
 export default function MixedFeedLayout({ articles, visualArt, reversed = false }: { articles: article[], visualArt: visualArt[], reversed?: boolean }) {
-    console.log("props", articles, visualArt)
+    
     const cards = <div >
         <div className="lg:grid lg:gap-4 lg:grid-cols-2 sm:max-w-sm sm:mx-auto lg:max-w-full">
             {articles.length > 3 && articles.slice(0, 4).map((article, idx) => (

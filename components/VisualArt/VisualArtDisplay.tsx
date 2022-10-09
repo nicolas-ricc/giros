@@ -5,8 +5,8 @@ import CardDate from "../Cards/Components/CardDate";
 import { visualArt } from "../types";
 
 export default function VisualArtDisplay({ artwork }: { artwork: visualArt }) {
-    console.log("artwork", artwork)
-    console.log("date art", artwork?.publishDate)
+    
+    
 
     return <div className="w-full h-full p-5 lg:p-20">
         {artwork && (<>

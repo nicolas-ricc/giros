@@ -3,14 +3,12 @@ import { useRouter } from 'next/router'
 import AuthorArticleList from '../../components/Authors/AuthorArticleList'
 import { articlesByAuthor, getArticlesByAuthor } from '../../dao/articles/articlesDAO'
 import { getAuthorIds } from '../../dao/authors/authorsDAO'
-import { urlFor } from '../../dao/client'
-import Image from 'next/image'
 import DataLoader from '../../components/DataLoader/DataLoader'
 import AuthorProfile from '../../components/Authors/AuthorProfile'
 
 export async function getStaticPaths() {
     const authorIds = (await getAuthorIds()).map(id => ({ params: { authorId: id } }))
-    console.log(authorIds)
+    
     return {
         paths: authorIds,
         fallback: false,
@@ -19,7 +17,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
     const articlesByAuthor = await getArticlesByAuthor(params.authorId);
-    console.log("articleList", articlesByAuthor)
+    
     return {
         props: {
             articlesByAuthor,

@@ -3,12 +3,13 @@ import Image from 'next/image'
 import React from 'react'
 import { urlFor } from '../../dao/client'
 import ArticleAuthorReference from '../Authors/ArticleAuthorReference'
+import CardDate from '../Cards/Components/CardDate'
 import { dateDisplaySelection } from '../utils/dateFormatter'
 import { portableTextComponents } from './portableTextComponents'
 
 
 export default function Article({ article }) {
-    console.log("content", article.content)
+    
 
     const imgStyle = {
         background: 'cover',
@@ -43,7 +44,7 @@ export default function Article({ article }) {
                         <ArticleAuthorReference author={article.author} />
                     </div>
                     <div className="flex justify-end items-baseline">
-                        <p className="text-giros-reading-gray pl-2">{dateDisplaySelection.dayAndMonth(article.publishDate)}</p>
+                        <CardDate date={dateDisplaySelection.dayAndMonth(article.publishDate)}/>
                     </div>
                 </div>
                 <div className='flex flex-col justify-center items-center'>

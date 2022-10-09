@@ -4,23 +4,25 @@ import React, { useState } from 'react'
 import { cathegories } from './cathegories';
 import girosLogo from '../static/logo_giros_green.png'
 import MenuIcon from './MenuIcon';
+import { cathegoryMap } from '../Cathegories/cathegoryMap';
 
 export const Nav = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const cathegoryListItems = cathegories.map((cat, idx) => (
-        <li key={idx} className='link text-xl'>
-            <Link href={`/cathegories${cat.link}`}>
+    const cathegoryListItems = cathegories.map((cat, idx) => {
+        const mapped = cathegoryMap(cat)
+        return (<li key={idx} className='link text-xl'>
+            <Link href={`/cathegories/${mapped.url}`}>
                 <a
                     aria-label="Our product"
                     title="Our product"
                     className="text-primary font-bold  link-highlight-green"
                 >
-                    {cat.title.toUpperCase()}
+                    {mapped.title.toUpperCase()}
                 </a>
             </Link>
-        </li>
-    ))
+        </li>)
+})
 
     return (
         <div className='fixed top-0 z-[1030] w-full'>
@@ -43,7 +45,7 @@ export const Nav = () => {
                     </span>
                 </a></Link>
                 <ul className="hidden space-x-8 lg:flex lg:justify-evenly">
-                    {cathegoryListItems.slice(Math.floor(cathegories.length / 2), cathegories.length - 1)}
+                    {cathegoryListItems.slice(Math.floor(cathegories.length / 2), cathegories.length)}
                 </ul>
                 {isMenuOpen && (
                     <div className="absolute top-0 left-0 w-full z-10">

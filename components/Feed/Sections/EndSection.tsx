@@ -1,13 +1,11 @@
-import { getAuthors, getAuthorsSample } from "../../../dao/authors/authorsDAO";
+import { getAuthorsSample } from "../../../dao/authors/authorsDAO";
 import AuthorList from "../../Authors/AuthorList";
 import DataLoader from "../../DataLoader/DataLoader";
+import { author } from "../../types";
 
-export default function EndSection(){
+export default function EndSection({ authors }: { authors: author[] }) {
+    return (authors && <section>
+        <AuthorList authors={authors} />
+    </section>)
 
-    return <DataLoader id='authors' load={getAuthorsSample} args={[6]} render={(data =>  
-    <section>
-        <AuthorList authors={data}/>
-    </section>
-    )}
-    />
 }

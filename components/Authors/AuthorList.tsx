@@ -15,7 +15,7 @@ export default function AuthorList({ authors }: { authors: any }) {
                     Nosotros
                 </p>
                 <p className="card-text text-base text-gray-700 md:text-lg">
-                    Texto de presentación de los autores
+                    Algunos de los que hacemos esto posible
                 </p>
             </div>
             <div className={`grid grid-cols-2 md:grid-cols-2 grid-rows-auto lg:grid-cols-${authors.length <= 4 ? authors.length : 4} justify-evenly mx-auto lg:max-w-screen-lg`}>
@@ -28,7 +28,7 @@ export default function AuthorList({ authors }: { authors: any }) {
                                     width={80}
                                     height={80}
                                     src={urlFor(author.avatar)?.url()}
-                                    alt="Person"
+                                    alt={author.name}
                                 />}
                             </div>
                             <div className="flex flex-col items-center text-center">

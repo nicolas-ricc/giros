@@ -12,7 +12,7 @@ module.exports = {
       },
       colors: {
         'primary': '#00FA01',
-        'highlight': '#FFDCBC',
+        'highlight': '#FFC7FF',
         'reading': '#E7EBF0',
         'giros-orange': '#fa6b04',
         'giros-pink': '#FFEECB',

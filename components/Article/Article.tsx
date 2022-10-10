@@ -29,21 +29,21 @@ export default function Article({ article }) {
             <div className={`w-full h-full flex justify-center align-center mb-5 float-left relative`}>
                 <div style={overlay}>
                     <div >
-                        <h1 className="article-title">{article.title?.toUpperCase()}</h1>
+                        <h1 className="article-title">{article.title}</h1>
                     </div>
                 </div>
                 <div className="w-1/3 h-full mx-auto my-auto bg-transparent">
                 </div >
-                <div className="w-2/3 h-full bg-cover">
-                    <Image style={imgStyle} src={urlFor(article.mainPicture).url()} layout="responsive" alt={article.mainPicture.alt} width={'100%'} height={'50%'} priority />
+                <div className="w-2/3 h-full">
+                    <Image style={imgStyle} src={urlFor(article.mainPicture).url()} layout="responsive" objectFit="cover" alt={article.mainPicture.alt} width={'100%'} height={'60%'} priority />
                 </div>
             </div>
             <div className="sm:w-full lg:w-2/3 sm:px-8">
-                <div className="h-full mx-auto my-auto grid grid-cols-2">
-                    <div className="flex justify-start items-baseline">
+                <div className="h-full mx-auto my-auto flex flex-col justify-evenly items-center lg:flex-row lg:justify-between">
+                    <div>
                         <ArticleAuthorReference author={article.author} />
                     </div>
-                    <div className="flex justify-end items-baseline">
+                    <div>
                         <CardDate date={dateDisplaySelection.dayAndMonth(article.publishDate)}/>
                     </div>
                 </div>

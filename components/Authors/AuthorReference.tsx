@@ -17,7 +17,7 @@ export default function AuthorReference({ author }) {
                             className="object-cover w-10 h-10 rounded-full shadow-sm mr-3"
                         />
                     }
-                    <div className={`font-semibold px-2 ${!author.avatar &&  'pl-0'} link-highlight`}>
+                    <div className={`font-semibold px-2 ${!author.avatar &&  'pl-0'} text-highlight link-highlight`}>
                         {author?.name}
                     </div>
                 </div>

@@ -1,7 +1,7 @@
 .article-title {
     margin: 1rem;
     line-height: 1.15;
-    @apply text-primary text-4xl lg:text-6xl font-['Montserrat'] font-bold 
+    @apply text-primary lg:text-6xl font-['Montserrat'] font-bold 
 }
 
 .article-header {

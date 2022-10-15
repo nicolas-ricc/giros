@@ -3,7 +3,7 @@
   }
   
   .card-text {
-    @apply text-reading font-['Lato'] text-lg
+    @apply text-reading font-['Lato'] text-lg 
   }
   
   .shadow-feed {

@@ -4,7 +4,8 @@ import { contactInfo, getContactsAndSocials } from "../../dao/statics/staticsDAO
 import DataLoader from "../DataLoader/DataLoader";
 import girosLogo from '../static/logo_giros_green.png'
 import { contactTypeRedirectMap } from "./contactTypeRedirectMap";
-import { socialsTypeRedirectMap } from "./socialsTypeRedirectMap";
+import { socialsTypeRedirectMap } from "../Socials/socialsTypeRedirectMap";
+import SocialsList from "../Socials/SocialsList";
 
 
 interface FooterProps {
@@ -48,7 +49,7 @@ export const Footer = ({ contactInfo }: FooterProps) => {
                                     return (
                                         <div key={idx} className="flex">
                                             <Link href={contact.href}><a
-                                            className="link"
+                                                className="link"
                                                 aria-label={`Nuestro ${contact.title}`}
                                                 title={`Nuestro ${contact.title}`}
                                             >
@@ -60,24 +61,13 @@ export const Footer = ({ contactInfo }: FooterProps) => {
                                 )}
                         </div>
                     </div>
-                    <div  className="space-y-2 text-sm">
+                    <div className="space-y-2 text-sm">
                         <p className="text-base font-bold">
                             Redes
                         </p>
                         <div className="flex items-center mt-1 space-x-3">
-                            {Array.isArray(contactInfo?.social_networks.social_drop) &&
-                                contactInfo.social_networks.social_drop.length > 0 &&
-                                contactInfo.social_networks.social_drop.map((socialType, idx) => {
-                                    const value = contactInfo.social_networks[socialType]
-                                    const social = socialsTypeRedirectMap(socialType, value)
-
-                                    return (
-                                        <Link href={social.href} key={idx}>
-                                            <a className="link">
-                                                <div className="text-xl link-highlight">{social.icon}</div>
-                                            </a>
-                                        </Link>)
-                                })}
+                            {contactInfo?.social_networks && Array.isArray(contactInfo.social_networks.social_drop) &&
+                                <SocialsList socials={contactInfo.social_networks} allowedTypes={contactInfo.social_networks.social_drop} />}
                         </div>
                     </div>
                 </div>

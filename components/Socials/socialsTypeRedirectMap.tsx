@@ -1,9 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faWhatsapp, faTelegram, faInstagram, faFacebook, faTiktok, faTwitter } from '@fortawesome/free-brands-svg-icons'
-import { faEnvelope, faSquarePhone } from '@fortawesome/free-solid-svg-icons'
+import { faInstagram, faFacebook, faTiktok, faTwitter} from '@fortawesome/free-brands-svg-icons'
 import { LetterboxIcon } from '../static/svg/letterbox'
 
-export const socialsTypeRedirectMap = (socialType, social) => {
+export const socialsTypeRedirectMap = (socialType: string, social: string): {href: string, icon: JSX.Element} => {
     switch (socialType) {
         case 'ig':
             return {
@@ -33,7 +32,7 @@ export const socialsTypeRedirectMap = (socialType, social) => {
         default:
             return {
                 href: social,
-                icon: socialType
+                icon: <p>O.O</p>
             }
     }
 }

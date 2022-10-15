@@ -8,7 +8,18 @@ const nextConfig = {
   env: {
     sanityToken: "sk4tKo4o8p7nzIAWPhnqioyKC1Uz8Jbpb9B0teI7xpwUlqLckpAhWavzkWwYo7eN1ytBSOwOBNwnZizgNzu5j96R2UYF3XfJg6R5UlZjPWNfci76EbeBVjXTNPwdC6JjnPDIfCVGayYt0kVM7OpkIA44t94P3IqDu5csBxQpjBuCA2cDuJsA"
   },
-  optimizeFonts: false
+  optimizeFonts: false,
+  future: {
+    webpack5: true,
+  },
+  webpack(config) {
+    config.resolve.fallback = {
+      ...config.resolve.fallback, 
+      fs: false, 
+    };
+
+    return config;
+  },
 }
 
 module.exports = nextConfig

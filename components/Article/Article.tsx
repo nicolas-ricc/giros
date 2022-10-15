@@ -9,7 +9,7 @@ import { portableTextComponents } from './portableTextComponents'
 
 
 export default function Article({ article }) {
-    
+
 
     const imgStyle = {
         background: 'cover',
@@ -39,12 +39,12 @@ export default function Article({ article }) {
                 </div>
             </div>
             <div className="sm:w-full lg:w-2/3 sm:px-8">
-                <div className="h-full mx-auto my-auto flex flex-col justify-evenly items-center lg:flex-row lg:justify-between">
+                <div className="h-full mx-auto my-auto flex flex-col justify-between gap-2 items-center lg:flex-row lg:justify-between">
                     <div>
-                        <ArticleAuthorReference author={article.author} />
+                        <CardDate date={dateDisplaySelection.dayAndMonth(article.publishDate)} />
                     </div>
                     <div>
-                        <CardDate date={dateDisplaySelection.dayAndMonth(article.publishDate)}/>
+                        <ArticleAuthorReference author={article.author} />
                     </div>
                 </div>
                 <div className='flex flex-col justify-center items-center'>

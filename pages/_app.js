@@ -4,10 +4,13 @@ import '../styles/loadingState.css'
 import '../styles/cards.css'
 import '../styles/feed.css'
 import '../styles/artwork.css'
-
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
 import Layout from '../components/Layout/Layout'
 import { Hydrate, QueryClient, QueryClientProvider } from 'react-query'
 import {useState} from 'react'
+
+config.autoAddCss = false
 
 function MyApp({ Component, pageProps }) {
   

@@ -32,8 +32,8 @@ export default function VisualArtCard({ artwork, withCathegoryReference }: {artw
                                 <h5 className="mb-2 text-xl font-bold leading-none sm:text-2xl text-primary">
                                     {artwork.title}
                                 </h5>
-                                {withCathegoryReference && <CathegoryReference cathegory={"Artes visuales"}/>}
-                                <AuthorReference author={artwork.author} />
+                                {withCathegoryReference && <div className="py-2"><CathegoryReference cathegory={"Artes visuales"}/></div>}
+                                <AuthorReference author={artwork.author} picture={false}/>
                             </div>
                         </div>
                     </div>

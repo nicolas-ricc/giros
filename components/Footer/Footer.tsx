@@ -6,13 +6,14 @@ import girosLogo from '../static/logo_giros_green.png'
 import { contactTypeRedirectMap } from "./contactTypeRedirectMap";
 import { socialsTypeRedirectMap } from "./socialsTypeRedirectMap";
 
+
 interface FooterProps {
     contactInfo?: contactInfo
 }
 
 export const Footer = ({ contactInfo }: FooterProps) => {
 
-    
+
     return (
         <DataLoader id='static-configs' load={getContactsAndSocials} options={{ initialData: contactInfo }} render={(data) => (
             <div className="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl text-reading">
@@ -35,10 +36,10 @@ export const Footer = ({ contactInfo }: FooterProps) => {
                         </div>
                     </div>
                     <div className="space-y-2 text-sm">
-                        <p className="text-base font-bold ">
+                        <p className="text-base font-bold">
                             Contacto
                         </p>
-                        <div className="flex flex-col">
+                        <div className="flex items-center mt-1 space-x-3">
                             {Array.isArray(contactInfo?.contacts.contact_drop) &&
                                 contactInfo.contacts.contact_drop.length > 0 &&
                                 contactInfo.contacts.contact_drop.map((contactType, idx) => {
@@ -46,12 +47,12 @@ export const Footer = ({ contactInfo }: FooterProps) => {
                                     const contact = contactTypeRedirectMap(contactType, value)
                                     return (
                                         <div key={idx} className="flex">
-                                            <p className="mr-1 ">{contact.title}</p>
                                             <Link href={contact.href}><a
+                                            className="link"
                                                 aria-label={`Nuestro ${contact.title}`}
                                                 title={`Nuestro ${contact.title}`}
                                             >
-                                                {value}
+                                                <div className="text-xl link-highlight">{contact.icon}</div>
                                             </a></Link>
                                         </div>)
                                 }
@@ -59,28 +60,25 @@ export const Footer = ({ contactInfo }: FooterProps) => {
                                 )}
                         </div>
                     </div>
-                    <div>
-                        <span className="text-base font-bold  ">
+                    <div  className="space-y-2 text-sm">
+                        <p className="text-base font-bold">
                             Redes
-                        </span>
+                        </p>
                         <div className="flex items-center mt-1 space-x-3">
                             {Array.isArray(contactInfo?.social_networks.social_drop) &&
                                 contactInfo.social_networks.social_drop.length > 0 &&
                                 contactInfo.social_networks.social_drop.map((socialType, idx) => {
                                     const value = contactInfo.social_networks[socialType]
                                     const social = socialsTypeRedirectMap(socialType, value)
-                                    
+
                                     return (
                                         <Link href={social.href} key={idx}>
-                                            <a>
-                                                {social.icon}
+                                            <a className="link">
+                                                <div className="text-xl link-highlight">{social.icon}</div>
                                             </a>
                                         </Link>)
                                 })}
                         </div>
-                        <p className="mt-4 text-sm ">
-                            ¡Envianos tu artículo!
-                        </p>
                     </div>
                 </div>
                 <div className="flex flex-col-reverse justify-between pt-5 pb-10 border-t lg:flex-row">

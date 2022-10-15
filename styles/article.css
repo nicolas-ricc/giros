@@ -9,16 +9,12 @@
 }
 
 .article-description {
-    line-height: 1.5;
-    font-size: 1.5rem;
     padding-left: 1rem;
     padding-right: 1rem;
-    @apply text-highlight font-bold
+    @apply text-highlight font-bold text-lg
 }
 
 .article-body {
-    line-height: 1.5;
-    font-size: 1rem;
     padding-left: 1rem;
     padding-right: 1rem;
     @apply text-reading

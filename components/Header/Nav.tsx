@@ -11,22 +11,22 @@ export const Nav = () => {
 
     const cathegoryListItems = cathegories.map((cat, idx) => {
         const mapped = cathegoryMap(cat)
-        return (<li key={idx} className='link text-xl'>
+        return (<li key={idx} className='link text-xl' onClick={() => setIsMenuOpen(false)}>
             <Link href={`/cathegories/${mapped.url}`}>
                 <a
                     aria-label="Our product"
                     title="Our product"
-                    className="text-primary font-bold  link-highlight-green"
+                    className="font-['Lato'] font-bold text-primary link-highlight-green"
                 >
                     {mapped.title.toUpperCase()}
                 </a>
             </Link>
         </li>)
-})
+    })
 
     return (
         <div className='fixed top-0 z-[1030] w-full'>
-            <div className="mx-auto relative py-3 flex justify-evenly items-center lg:space-x-16 bg-giros-card-gray">
+            <div className="mx-auto relative py-3 hidden lg:flex justify-evenly items-center lg:space-x-16 bg-giros-card-gray">
                 <ul className="hidden space-x-8 lg:flex lg:justify-evenly">
                     {cathegoryListItems.slice(0, Math.floor(cathegories.length / 2))}
                 </ul>
@@ -47,9 +47,28 @@ export const Nav = () => {
                 <ul className="hidden space-x-8 lg:flex lg:justify-evenly">
                     {cathegoryListItems.slice(Math.floor(cathegories.length / 2), cathegories.length)}
                 </ul>
+            </div>
+            <div className="flex justify-between items-center  mx-4 relative py-3  bg-giros-card-gray lg:hidden">
+                <Link href="/"><a
+                    aria-label="Company"
+                    title="Company"
+                    className="inline-flex items-center"
+                >
+                    <span className="ml-2 text-xl font-bold  text-gray-800 uppercase">
+                        <Image
+                            src={girosLogo}
+                            alt={"giros logo"}
+                            width={150}
+                            height={70}
+                        />
+                    </span>
+                </a></Link>
+                <MenuIcon onClick={() => setIsMenuOpen(!isMenuOpen)} />
+            </div>
+            <div>
                 {isMenuOpen && (
-                    <div className="absolute top-0 left-0 w-full z-10">
-                        <div className="p-5 bg-giros-card-gray border border-highlight rounded shadow-sm">
+                    <div className="absolute w-2/3 h-screen z-10 right-0 inset-y-0 lg:hidden">
+                        <div className="p-5  h-screen bg-giros-card-gray rounded shadow-sm">
                             <div className="flex items-center justify-between mb-4">
                                 <div>
                                     <button
@@ -75,7 +94,6 @@ export const Nav = () => {
                         </div>
                     </div>
                 )}
-                <MenuIcon onClick={() => setIsMenuOpen(!isMenuOpen)} />
             </div>
         </div>
     );

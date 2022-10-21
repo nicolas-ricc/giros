@@ -4,7 +4,6 @@ import { contactInfo, getContactsAndSocials } from "../../dao/statics/staticsDAO
 import DataLoader from "../DataLoader/DataLoader";
 import girosLogo from '../static/logo_giros_green.png'
 import { contactTypeRedirectMap } from "./contactTypeRedirectMap";
-import { socialsTypeRedirectMap } from "../Socials/socialsTypeRedirectMap";
 import SocialsList from "../Socials/SocialsList";
 
 

@@ -13,7 +13,7 @@ export const ArticleCard = ({ article }) => {
     const [isHovered, setIsHovered] = useState<boolean>(false)
 
     const articleUrl = `/articles/${article._id}`
-    
+
 
     return (
         <CardContainer>
@@ -37,7 +37,7 @@ export const ArticleCard = ({ article }) => {
                     <div className="h-full flex flex-col justify-between items-left mb-1 pb-2">
                         <div className="mb-3 flex flex-row gap-2 align-baseline justify-between">
                             <CathegoryReference cathegory={article.cathegory} />
-                            <CardDate date={article.publishDate}/>
+                            <CardDate date={article.publishDate} />
                         </div>
                         <Link href={articleUrl}>
                             <a className="link">
@@ -51,7 +51,9 @@ export const ArticleCard = ({ article }) => {
                                 </div>
                             </a>
                         </Link>
-                        <AuthorReference author={article.author} />
+                        <div className="pt-2">
+                            <AuthorReference author={article.author} />
+                        </div>
                     </div>
                 </div>
             </div>

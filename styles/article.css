@@ -1,7 +1,7 @@
 .article-title {
     margin: 1rem;
     line-height: 1.15;
-    @apply text-primary lg:text-6xl font-['Montserrat'] font-bold 
+    @apply text-primary text-lg lg:text-7xl font-['Montserrat'] font-bold
 }
 
 .article-header {
@@ -9,19 +9,15 @@
 }
 
 .article-description {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    @apply text-highlight font-bold text-lg
+    @apply text-highlight text-lg
 }
 
 .article-body {
-    padding-left: 1rem;
-    padding-right: 1rem;
     @apply text-reading
 }
 
 .article-body > p {
-    @apply py-2 font-['Lato'] text-xl indent-4
+    @apply py-2 font-['Lato'] text-lg indent-4
 }
 
 .article-body::first-letter {

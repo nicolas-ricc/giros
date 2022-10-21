@@ -14,9 +14,6 @@ export default function CathegoryFeed() {
      load={getArticlesByCathegory} 
      args={[cathegory]} 
      render={(data) => data && <>
-        <div className="article-title text-center mx-auto">
-            <h2>{data[0]?.cathegory}</h2>
-        </div>
         <CathegoryArticleList articles={data} />
     </>}/>)
 }

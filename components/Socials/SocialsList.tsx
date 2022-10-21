@@ -8,9 +8,9 @@ export default function SocialsList({ socials, allowedTypes }: { socials: Record
             const socialType = typeAndValue[0]
             if(allowedTypes.includes(socialType)){
             const value = typeAndValue[1]
-            const social = socialsTypeRedirectMap(socialType, value)
+            const social = socialsTypeRedirectMap[socialType]
             return (
-                <Link href={social.href} key={idx}>
+                <Link href={social.profile(value)} key={idx}>
                     <a className="link">
                         <div className="text-xl link-highlight">{social.icon}</div>
                     </a>

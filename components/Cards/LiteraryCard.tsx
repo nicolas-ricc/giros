@@ -40,7 +40,9 @@ export default function LiteraryCard({ article }) {
                                 </a>
                             </Link>
                         </div>
-                        <AuthorReference author={article.author} />
+                        <div className="pt-2">
+                            <AuthorReference author={article.author} />
+                        </div>
                     </div>
                 </div>
             </div>

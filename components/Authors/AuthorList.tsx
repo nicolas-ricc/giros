@@ -18,10 +18,10 @@ export default function AuthorList({ authors }: { authors: any }) {
                     Algunos de los que hacemos esto posible
                 </p>
             </div>
-            <div className={`grid grid-cols-2 md:grid-cols-2 grid-rows-auto lg:grid-cols-${authors.length <= 4 ? authors.length : 4} justify-center mx-auto lg:max-w-screen-lg`}>
+            <div className={`grid grid-cols-2 md:grid-cols-2 grid-rows-auto lg:grid-cols-${authors.length <= 4 ? authors.length : 4} justify-evenly mx-auto lg:max-w-screen-lg`}>
                 {authors.map((author: author, idx: number) => (
                     <Link key={idx} href={`/authors/${author._id}`}>
-                        <a className="flex flex-col items-center justify-around p-2 link">
+                        <a className="flex flex-col items-center justify-around px-2 py-4 link">
                             <div>
                                 {author.avatar && <Image
                                     className="object-cover w-10 h-10 lg:w-20 lg:h-20 mb-2 rounded-full"

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { urlFor } from "../../dao/client";
+import { urlFor } from "../../data/client";
 import AuthorReference from "../Authors/AuthorReference";
 import CathegoryReference from "../Cathegories/CathegoryReference";
 import { visualArt } from "../types";

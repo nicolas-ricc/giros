@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import React from 'react'
 import Article from '../../components/Article/Article'
 import DataLoader from '../../components/DataLoader/DataLoader'
-import { getSingleArticle } from '../../dao/articles/articlesDAO'
+import { getSingleArticle } from '../../data/articles/articlesDAO'
 import {article} from '../../components/types'
 
 export default function SingleArticlePage(){

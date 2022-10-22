@@ -2,12 +2,13 @@ import { PortableText } from '@portabletext/react'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import React from 'react'
-import { urlFor } from '../../dao/client'
+import { urlFor } from '../../data/client'
 import ArticleAuthorReference from '../Authors/ArticleAuthorReference'
 import CardDate from '../Cards/Components/CardDate'
 import { socialsTypeRedirectMap } from '../Socials/socialsTypeRedirectMap'
 import { dateDisplaySelection } from '../utils/dateFormatter'
 import { portableTextComponents } from './portableTextComponents'
+import RelatedArticles from './RelatedArticles'
 
 
 export default function Article({ article }) {
@@ -58,6 +59,9 @@ export default function Article({ article }) {
                             components={portableTextComponents}
                         />
                     </div>
+                </div>
+                <div className='flex flex-col lg:gap-4 lg:grid lg:grid-cols-3 lg:grid-rows-auto'>
+                    <RelatedArticles article={article} />
                 </div>
             </div>
         </article>

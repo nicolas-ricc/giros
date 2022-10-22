@@ -13,3 +13,5 @@ const builder = imageUrlBuilder(cmsClient)
 export const urlFor = (source) => {
     return builder.image(source)
 }
+
+export const slice = (limit: number | undefined) => limit ? `[0...${limit}]` : ''

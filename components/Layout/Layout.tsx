@@ -3,7 +3,7 @@ import styles from '../../styles/Home.module.css'
 import Head from 'next/head'
 import { Nav } from '../Header/Nav'
 import { Footer } from '../Footer/Footer'
-import { getContactsAndSocials } from '../../dao/statics/staticsDAO'
+import { getContactsAndSocials } from '../../data/statics/staticsDAO'
 import DataLoader from '../DataLoader/DataLoader'
 
 export default function Layout({ children }: { children: React.ReactNode}) {
@@ -15,7 +15,7 @@ export default function Layout({ children }: { children: React.ReactNode}) {
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
             </Head>
-            <header className="px-0 mx-0 top-0">
+            <header className="px-0 mx-0 top-0 w-screen">
                 <Nav />
             </header>
             <main className='mt-[7rem] h-full w-full p-0'>

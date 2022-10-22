@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-undef */
 import React from 'react'
-import { getArticlesAndArt } from '../../dao/articles/articlesDAO'
+import { getArticlesAndArt } from '../../data/articles/articlesDAO'
 import DataLoader from '../DataLoader/DataLoader'
 import { article, articlesAndArt, author, visualArt } from '../types'
 import BottomSection from './Sections/BottomSection'

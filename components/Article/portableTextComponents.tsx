@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image';
-import { urlFor } from '../../dao/client';
+import { urlFor } from '../../data/client';
 import { PortableTextReactComponents } from '@portabletext/react';
 
 export const portableTextComponents: Partial<PortableTextReactComponents> = {

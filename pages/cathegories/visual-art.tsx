@@ -1,6 +1,6 @@
 import DataLoader from "../../components/DataLoader/DataLoader";
 import VisualArtList from "../../components/VisualArt/VisualArtList";
-import { getVisualArt } from "../../dao/visualArt/visualArt";
+import { getVisualArt } from "../../data/visualArt/visualArt";
 
 export default function VisualArtGallery() {
 

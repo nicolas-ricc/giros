@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
-import { urlFor } from '../../dao/client';
+import { urlFor } from '../../data/client';
 import { author } from '../types';
 
 export default function AuthorList({ authors }: { authors: any }) {

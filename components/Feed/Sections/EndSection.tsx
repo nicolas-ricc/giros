@@ -1,4 +1,4 @@
-import { getAuthorsSample } from "../../../dao/authors/authorsDAO";
+import { getAuthorsSample } from "../../../data/authors/authorsDAO";
 import AuthorList from "../../Authors/AuthorList";
 import DataLoader from "../../DataLoader/DataLoader";
 import { author } from "../../types";

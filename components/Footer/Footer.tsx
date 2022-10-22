@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { contactInfo, getContactsAndSocials } from "../../dao/statics/staticsDAO";
+import { contactInfo, getContactsAndSocials } from "../../data/statics/staticsDAO";
 import DataLoader from "../DataLoader/DataLoader";
 import girosLogo from '../static/logo_giros_green.png'
 import { contactTypeRedirectMap } from "./contactTypeRedirectMap";

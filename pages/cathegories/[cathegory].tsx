@@ -1,5 +1,5 @@
 import React from 'react'
-import { getArticlesByCathegory } from '../../dao/articles/articlesDAO'
+import { getArticlesByCathegory } from '../../data/articles/articlesDAO'
 import { useRouter } from 'next/router'
 import { useQuery } from 'react-query'
 import CathegoryArticleList from '../../components/Cathegories/CathegoryArticleList'

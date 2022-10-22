@@ -1,9 +1,9 @@
 import { dehydrate, QueryClient } from 'react-query'
 import Feed from '../components/Feed/Feed'
-import { getArticlesAndArt } from '../dao/articles/articlesDAO'
+import { getArticlesAndArt } from '../data/articles/articlesDAO'
 import DataLoader from '../components/DataLoader/DataLoader'
 import { articlesAndArt } from '../components/types'
-import { getAuthorsSample } from '../dao/authors/authorsDAO'
+import { getAuthorsSample } from '../data/authors/authorsDAO'
 
 export async function getStaticProps() {
   const queryClient = new QueryClient()

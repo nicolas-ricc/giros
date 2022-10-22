@@ -1,19 +1,19 @@
 import { article, articlesAndArt, author } from '../../components/types'
-import { cmsClient } from '../client'
+import { cmsClient, slice } from '../client'
 import { getVisualArt } from '../visualArt/visualArt'
 
-export const getArticles = async (): Promise<article[]> => {
-    const _articles = await cmsClient.fetch('*[_type match "article" && !(_id in path("drafts.**"))] {..., author->} | order(publishDate desc)')
+export const getArticles = async (limit?: number): Promise<article[]> => {
+    const _articles = await cmsClient.fetch(`*[_type match "article" && !(_id in path("drafts.**"))]${slice(limit)} {..., author->} | order(publishDate desc)`)
     return _articles
 }
 
 export const getSingleArticle = async(id: string): Promise<article> => {
-    const _article = await cmsClient.fetch(`*[_id == '${id}'] {..., author->}`)
-    return _article[0]
+    const _article = await cmsClient.fetch(`*[_id == '${id}'][0] {..., author->}`)
+    return _article
 }
 
-export const getArticlesByCathegory = async(cathegory: string): Promise<article[]> => {
-    const _articles = await cmsClient.fetch(`*[_type match "article" && cathegory match \"${cathegory}\" && !(_id in path("drafts.**"))] {..., author->} | order(publishDate desc)`)
+export const getArticlesByCathegory = async(cathegory: string, limit?: number): Promise<article[]> => {
+    const _articles = await cmsClient.fetch(`*[_type match "article" && cathegory match \"${cathegory}\" && !(_id in path("drafts.**"))]${slice(limit)} {..., author->} | order(publishDate desc)`)
     return _articles
 }
 

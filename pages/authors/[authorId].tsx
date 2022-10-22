@@ -1,8 +1,8 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 import AuthorArticleList from '../../components/Authors/AuthorArticleList'
-import { articlesByAuthor, getArticlesByAuthor } from '../../dao/articles/articlesDAO'
-import { getAuthorIds } from '../../dao/authors/authorsDAO'
+import { articlesByAuthor, getArticlesByAuthor } from '../../data/articles/articlesDAO'
+import { getAuthorIds } from '../../data/authors/authorsDAO'
 import DataLoader from '../../components/DataLoader/DataLoader'
 import AuthorProfile from '../../components/Authors/AuthorProfile'
 

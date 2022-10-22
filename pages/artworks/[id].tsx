@@ -1,7 +1,7 @@
 import { useRouter } from "next/router"
 import DataLoader from "../../components/DataLoader/DataLoader"
 import VisualArtDisplay from "../../components/VisualArt/VisualArtDisplay"
-import { getSingleVisualArtPiece } from "../../dao/visualArt/visualArt"
+import { getSingleVisualArtPiece } from "../../data/visualArt/visualArt"
 import {visualArt} from "../../components/types"
 
 export default function SingleArticlePage(){

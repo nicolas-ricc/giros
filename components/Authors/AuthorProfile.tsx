@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { urlFor } from "../../dao/client";
+import { urlFor } from "../../data/client";
 import CardDescription from "../Cards/Components/CardDescription";
 import SocialsList from "../Socials/SocialsList";
 import { author } from "../types";
@@ -23,7 +23,7 @@ export default function AuthorProfile({ author }: { author: author }) {
                         <div className="text-highlight card-title">{author.name}</div>
                         <div className="text-highlight">{author.role}</div>
                     </div>
-                    {author?.description && <div className="py-4 text-sm"> <CardDescription maxLines={6} description={author.description} /></div>}
+                    {author?.description && <div className="py-4 text-sm"> <CardDescription maxLines={10} description={author.description} /></div>}
                 </div>
             </div>
             <div className="text-center text-reading pt-2">

@@ -27,17 +27,17 @@ export const Nav = () => {
     })
 
     return (
-        <div className='fixed top-0 z-[1030] w-screen bg-giros-card-gray'>
-            <div className="mx-auto relative py-3 hidden lg:flex justify-evenly items-center lg:space-x-16">
-                <ul className="hidden space-x-8 lg:flex lg:justify-evenly">
+        <div className='fixed top-0 z-[1030] w-full bg-giros-card-gray'>
+            <div className="mx-16 relative py-3 hidden lg:flex justify-between items-center">
+                <ul className="hidden space-x-8 lg:flex lg:justify-start">
                     {cathegoryListItems.slice(0, Math.floor(cathegories.length / 2))}
                 </ul>
                 <Link href="/"><a
-                    aria-label="Company"
-                    title="Company"
+                    aria-label="Giros-logo"
+                    title="Giros-logo"
                     className="inline-flex items-center"
                 >
-                    <span className="ml-2 text-xl font-bold  text-gray-800 uppercase">
+                    <span className="ml-2 text-xl font-bold text-gray-800 uppercase">
                         <Image
                             src={girosLogo}
                             alt={"giros logo"}
@@ -46,14 +46,14 @@ export const Nav = () => {
                         />
                     </span>
                 </a></Link>
-                <ul className="hidden space-x-8 lg:flex lg:justify-evenly">
+                <ul className="hidden space-x-8 lg:flex lg:justify-start">
                     {cathegoryListItems.slice(Math.floor(cathegories.length / 2), cathegories.length)}
                 </ul>
             </div>
-            <div className="flex justify-between items-center  mx-4 relative py-3  bg-giros-card-gray lg:hidden">
+            <div className="flex justify-between items-center  mx-4 relative py-3 bg-giros-card-gray lg:hidden">
                 <Link href="/"><a
-                    aria-label="Company"
-                    title="Company"
+                    aria-label="Giros-logo"
+                    title="Giros-logo"
                     className="inline-flex items-center"
                 >
                     <span className="ml-2 text-xl font-bold  text-gray-800 uppercase">

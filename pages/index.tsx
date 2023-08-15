@@ -4,12 +4,14 @@ import { getArticlesAndArt } from '../data/articles/articlesDAO'
 import DataLoader from '../components/DataLoader/DataLoader'
 import { articlesAndArt } from '../components/types'
 import { getAuthorsSample } from '../data/authors/authorsDAO'
+import { getAboutUs } from '../data/statics/staticsDAO'
 
 export async function getStaticProps() {
   const queryClient = new QueryClient()
   await Promise.all(
     [await queryClient.prefetchQuery('articles-query', getArticlesAndArt),
-    await queryClient.prefetchQuery('authors-sample', () => getAuthorsSample(6))])
+    await queryClient.prefetchQuery('authors-sample', () => getAuthorsSample(8))]
+  )
   return {
     props: { dehydratedState: JSON.parse(JSON.stringify(dehydrate(queryClient))) },
     revalidate: 60

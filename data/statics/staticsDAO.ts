@@ -21,6 +21,10 @@ export const getContactsAndSocials = async() => {
         return accum
     }, {contacts: {}, social_networks: {}})
     return contactInfo
-    
+}
+
+export const getAboutUs = async() => {
+    const contact = (await cmsClient.fetch('*[_type == "contacts" && !(_id in path("drafts.**"))]'))
+    return contact[0].aboutUs
 }
 

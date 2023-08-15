@@ -1,19 +1,16 @@
 import { PortableText } from '@portabletext/react'
 import Image from 'next/image'
-import { useRouter } from 'next/router'
 import React from 'react'
 import { urlFor } from '../../data/client'
 import ArticleAuthorReference from '../Authors/ArticleAuthorReference'
 import CardDate from '../Cards/Components/CardDate'
-import { socialsTypeRedirectMap } from '../Socials/socialsTypeRedirectMap'
-import { dateDisplaySelection } from '../utils/dateFormatter'
 import { portableTextComponents } from './portableTextComponents'
 import RelatedArticles from './RelatedArticles'
 
 
 export default function Article({ article }) {
 
-
+    console.log("ARRRRRTICLE", article)
     const imgStyle = {
         background: 'cover',
         WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0))',
@@ -46,7 +43,7 @@ export default function Article({ article }) {
             </div>
             <div className="w-full lg:w-2/3 px-4">
                 <div className="h-full mx-auto my-auto flex flex-col justify-between gap-2 items-center lg:flex-row lg:justify-between">
-                    <CardDate date={dateDisplaySelection.dayAndMonth(article.publishDate)} />
+                    <CardDate date={article.publishDate} />
                     <ArticleAuthorReference author={article.author} />
                 </div>
                 <div className='flex flex-col justify-center items-center'>

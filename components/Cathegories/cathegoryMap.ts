@@ -3,6 +3,8 @@ export const cathegoryMap = (cathegory): Record<"title" | "url" | string, string
         switch (cath) {
             case 'Artes visuales':
                 return 'visual-art'
+            case 'Nosotros':
+                return 'aboutUs'
             default:
                 return cath
         }

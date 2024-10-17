@@ -28,18 +28,21 @@ export async function getStaticProps({ params }) {
 
 export default function AuthorFeed({ articlesByAuthor }) {
     const authorId = useRouter().query.authorId as string
+    console.log("DEBUGGING - authorId", authorId)
     return (
         <DataLoader<articlesByAuthor>
             id='author-articles'
             load={getArticlesByAuthor}
             args={[authorId]}
             options={{ initialData: articlesByAuthor }}
-            render={data => data && (
+            render={data => {
+                console.log("DEBUGGING - data", data)
+                return (
                 <div className="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-10">
                     <AuthorProfile author={data.author} />
                     <AuthorArticleList articles={data.articles} />
                 </div>
-            )
+            )}
             } />
     )
 }

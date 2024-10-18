@@ -15,16 +15,6 @@ export async function getStaticPaths() {
     }
 }
 
-export async function getStaticProps({ params }) {
-    const articlesByAuthor = await getArticlesByAuthor(params.authorId);
-    
-    return {
-        props: {
-            articlesByAuthor,
-        }
-    };
-}
-
 export default function AuthorFeed({ articlesByAuthor }) {
     const authorId = useRouter().query.authorId as string
     console.log("DEBUGGING - authorId", authorId)

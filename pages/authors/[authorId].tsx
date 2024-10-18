@@ -15,7 +15,7 @@ export async function getStaticPaths() {
     }
 }
 
-export default function AuthorFeed({ articlesByAuthor }) {
+export default function AuthorFeed() {
     const authorId = useRouter().query.authorId as string
     console.log("DEBUGGING - authorId", authorId)
     return (
@@ -23,7 +23,6 @@ export default function AuthorFeed({ articlesByAuthor }) {
             id='author-articles'
             load={getArticlesByAuthor}
             args={[authorId]}
-            options={{ initialData: articlesByAuthor }}
             render={data => {
                 console.log("DEBUGGING - data", data)
                 return (
